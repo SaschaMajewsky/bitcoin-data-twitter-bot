@@ -12,4 +12,6 @@ api = tweepy.API(auth)
 
 print(api)
 
-api.update_status('Test')
+
+def send_tweet(content):
+    api.update_status(content)
