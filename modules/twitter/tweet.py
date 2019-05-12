@@ -1,7 +1,6 @@
 import tweepy
 import modules.fileIO.twitter_api
 
-
 CONSUMER_KEY = modules.fileIO.twitter_api.get_consumer_key()
 CONSUMER_SECRET = modules.fileIO.twitter_api.get_consumer_secret()
 ACCESS_KEY = modules.fileIO.twitter_api.get_access_key()
