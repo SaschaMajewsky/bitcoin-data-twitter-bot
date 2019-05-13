@@ -18,6 +18,6 @@ def get_access_secret():
 
 
 def read_line():
-    file = open(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname( __file__ )))) + "/resources/api_keys.txt")
+    file = open(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))) + "/resources/api_keys.txt")
     lines = file.readlines()
     return [lines[4].split("\n")[0], lines[6].split("\n")[0], lines[8].split("\n")[0], lines[10].split("\n")[0]]

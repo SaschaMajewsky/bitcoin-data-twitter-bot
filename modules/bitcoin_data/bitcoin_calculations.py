@@ -55,8 +55,3 @@ def count_aproximate_days_until_next_subsidy_era(blocks_until_new_era):
 def calculate_percentage_of_blocks_until_next_subsidy_era(current_blockheight, min_blockheight_next_era):
     pevious_min_blockheight_era = min_blockheight_next_era - 210000
     return str(round((pevious_min_blockheight_era / current_blockheight) * 100))
-
-
-print(count_blocks_until_next_subsidy_era(575754, 630000))
-print(count_aproximate_days_until_next_subsidy_era(count_blocks_until_next_subsidy_era(575754, 630000)))
-print(calculate_percentage_of_blocks_until_next_subsidy_era(575754, 630000))

@@ -1,6 +1,3 @@
-from modules.twitter.tweet import send_tweet
-
-
 def generate_tweet_bitcoin_halving_progression(subsidy_era, block_subsidy, remaining_blocks, remaining_days,
                                                percentage_progression):
     return "𝗕𝗧𝗖 𝗛𝗔𝗟𝗩𝗜𝗡𝗚 𝗜𝗡𝗙𝗢:\n" + "Subsidy Era: " + str(subsidy_era) + "/34\nBlock Subsidy Reward: " +\
@@ -13,8 +10,3 @@ def generate_tweet_bitcoin_halving_progression(subsidy_era, block_subsidy, remai
 def generate_ascii_progress_bar(percentage_given):
     filled_bar_length = int(round(26 * percentage_given / float(100)))
     return '▓' * filled_bar_length + '░' * (26 - filled_bar_length)
-
-
-print(generate_tweet_bitcoin_halving_progression(3, 12.5, 54246, 377, 72.95))
-
-send_tweet(generate_tweet_bitcoin_halving_progression(3, 12.5, 54246, 377, 72.95))
