@@ -1,5 +1,3 @@
-
-
 def calculate_subsidy_era(current_blockheight):
     # scheme {era : [era, subsidy reward, min_blockheight]}
     # see https://en.bitcoin.it/wiki/Controlled_supply for more info
@@ -44,3 +42,21 @@ def calculate_subsidy_era(current_blockheight):
             return subsidy_era[key - 1]
 
     return []
+
+
+def count_blocks_until_next_subsidy_era(current_blockheight, min_blockheight_next_era):
+    return min_blockheight_next_era - current_blockheight
+
+
+def count_aproximate_days_until_next_subsidy_era(blocks_until_new_era):
+    return round(blocks_until_new_era / 144)
+
+
+def calculate_percentage_of_blocks_until_next_subsidy_era(current_blockheight, min_blockheight_next_era):
+    pevious_min_blockheight_era = min_blockheight_next_era - 210000
+    return str(round((pevious_min_blockheight_era / current_blockheight) * 100))
+
+
+print(count_blocks_until_next_subsidy_era(575754, 630000))
+print(count_aproximate_days_until_next_subsidy_era(count_blocks_until_next_subsidy_era(575754, 630000)))
+print(calculate_percentage_of_blocks_until_next_subsidy_era(575754, 630000))
