@@ -8,5 +8,5 @@ def generate_tweet_bitcoin_halving_progression(subsidy_era, block_subsidy, remai
 
 
 def generate_ascii_progress_bar(percentage_given):
-    filled_bar_length = int(round(26 * percentage_given / float(100)))
+    filled_bar_length = int(round(26 * float(percentage_given) / float(100)))
     return '▓' * filled_bar_length + '░' * (26 - filled_bar_length)

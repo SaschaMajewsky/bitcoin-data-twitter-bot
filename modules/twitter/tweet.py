@@ -10,8 +10,6 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 
-print(api)
-
 
 def send_tweet(content):
     api.update_status(content)
