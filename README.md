@@ -33,8 +33,6 @@ For Windows to use the venv environment:
 venv/Scripts/activate
 cd ..
 cd ..
-cd modules
-cd scheduling
 python tweet_scheduler.py
 ```
 
