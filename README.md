@@ -1,1 +1,1 @@
-# bitcoin-data-twitter-bot
+# BitcoinDataTwitterBot

@@ -1,0 +1,11 @@
+//This file needs to contain your Twitter Developer account API keys! Replace x with your credentials.
+//Rename this file to api_keys.txt after your keys are inserted.
+
+CONSUMER_KEY=
+xxxxxxxxxxxx
+CONSUMER_SECRET=
+xxxxxxxxxxxx
+ACCESS_KEY=
+xxxxxxxxxxxx
+ACCESS_SECRET=
+xxxxxxxxxxxx
