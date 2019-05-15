@@ -20,12 +20,12 @@ def job_tweet_halving():
     percentage_of_blocks_until_next_subsidy_era =\
         calculate_percentage_of_blocks_until_next_subsidy_era(btc_current_blockheight, subsidy_era[2])
 
-    file = open(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))) +
+    file = open(os.path.join(os.path.dirname(__file__)) +
                 "/resources/last_halving_tweet.txt")
     lines = file.readlines()
     last_percentage_tweeted = lines[0].split("\n")
     file.close()
-
+    print(percentage_of_blocks_until_next_subsidy_era)
     if float(last_percentage_tweeted[0]) < float(percentage_of_blocks_until_next_subsidy_era):
         tweet = generate_tweet_bitcoin_halving_progression(subsidy_era[0], subsidy_era[1],
                                                            blocks_until_next_subsidy_era,
@@ -35,7 +35,7 @@ def job_tweet_halving():
         persist_tweet_in_file(percentage_of_blocks_until_next_subsidy_era, "last_halving_tweet.txt")
 
 
-schedule.every().day.at("12:00").do(job_tweet_halving)
+schedule.every().day.at("22:30").do(job_tweet_halving)
 
 while 1:
     schedule.run_pending()
