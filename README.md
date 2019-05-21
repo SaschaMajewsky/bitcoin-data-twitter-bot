@@ -4,7 +4,7 @@ The goal of the project is to provide a small twitter bot written in Python that
 
 ## Getting Started
 
-It is required to follow the instructions of /resource/api_keys_example and insert your Twitter Developer Account API keys there. Also rename the file to api_keys.txt and save it at the same directory.
+It is required to follow the instructions of /resources/api_keys_example.txt and insert your Twitter Developer Account API keys there. Then rename the file to api_keys.txt and save it at the same directory.
 
 To get the bot running start the tweet_scheduler.py or a binary file that might be released later on. From there on the bot is running on its own and checks every day at 12:00 if the halving has came a % closer and will tweet this out.
 
