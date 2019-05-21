@@ -1,12 +1,12 @@
 # BitcoinDataTwitterBot
 
-The goal of the project is to provide a small twitter bot written in Python that tweets out whenever a percentual change to the next halving happens. In additon to that it should tweet out a random quote of satoshi each day.
+The goal of the project is to provide a small twitter bot written in Python that tweets out whenever a percentual change to the next halving happens. In additon to that it should tweet out a random quote of satoshi each day(WIP).
 
 ## Getting Started
 
-At it is required to follow the instructions of /resource/api_keys_example and insert your Twitter Developer Account API keys. After that renamen the file to api_keys.txt and save it at the same directory.
+It is required to follow the instructions of /resource/api_keys_example and insert your Twitter Developer Account API keys there. Also rename the file to api_keys.txt and save it at the same directory.
 
-To get the bot running start the tweet_scheduler.py or a release binary that might be released later on. From there on the bot is running on its own and check every day at 12:00 if the halving has came closer and will tweet this out.
+To get the bot running start the tweet_scheduler.py or a binary file that might be released later on. From there on the bot is running on its own and checks every day at 12:00 if the halving has came a % closer and will tweet this out.
 
 In the directory /venv/ a full preinstalled version of Python 3.7 and all containing libraries of this project is ready to be used for Windows machines. Linux need to foolow the Prerequisites section.
 

@@ -35,7 +35,7 @@ def job_tweet_halving():
         persist_tweet_in_file(percentage_of_blocks_until_next_subsidy_era, "last_halving_tweet.txt")
 
 
-schedule.every().day.at("22:30").do(job_tweet_halving)
+schedule.every().day.at("12:00").do(job_tweet_halving)
 
 while 1:
     schedule.run_pending()
