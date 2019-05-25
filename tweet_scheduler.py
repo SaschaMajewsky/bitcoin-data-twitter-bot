@@ -2,9 +2,11 @@ import schedule
 import time
 import os
 import random
+import platform
 from packages.fileIO.persist_tweet import persist_tweet_in_file
 from packages.twitter.tweet import send_tweet
-from packages.twitter.tweet_generation import generate_tweet_bitcoin_halving_progression, generate_tweet_satoshi_quote_of_the_day
+from packages.twitter.tweet_generation import generate_tweet_bitcoin_halving_progression,\
+    generate_tweet_satoshi_quote_of_the_day
 from packages.bitcoin_data.bitcoin_api_data import get_btc_current_blockheight
 from packages.bitcoin_data.bitcoin_calculations import calculate_subsidy_era, count_blocks_until_next_subsidy_era,\
     calculate_percentage_of_blocks_until_next_subsidy_era, count_aproximate_days_until_next_subsidy_era
@@ -23,9 +25,14 @@ def job_tweet_halving():
     percentage_of_blocks_until_next_subsidy_era =\
         calculate_percentage_of_blocks_until_next_subsidy_era(btc_current_blockheight, subsidy_era[2])
 
-    file = open(os.path.join(os.path.dirname(__file__)) +
-                "/resources/last_halving_tweet.txt")
-    lines = file.readlines()
+    if platform.system() == 'Windows':
+        file = open(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))) + "/resources/" +
+                    "last_halving_tweet.txt", "w")
+        lines = file.readlines()
+    elif platform.system() == 'Linux':
+        file = open(os.path.normpath(os.getcwd() + "/resources/" + "last_halving_tweet.txt"), "r+")
+        lines = list(file)
+
     last_percentage_tweeted = lines[0].split("\n")
     file.close()
     print(percentage_of_blocks_until_next_subsidy_era)
@@ -39,9 +46,9 @@ def job_tweet_halving():
 
 
 def job_tweet_satoshi_quote_of_the_day():
-        max_count_satoshi_quote = 70
-        tweet = generate_tweet_satoshi_quote_of_the_day((get_quote_of_satoshi(random.randint(1, max_count_satoshi_quote))))
-        send_tweet(tweet)
+    max_count_satoshi_quote = 70
+    tweet = generate_tweet_satoshi_quote_of_the_day((get_quote_of_satoshi(random.randint(1, max_count_satoshi_quote))))
+    send_tweet(tweet)
 
 
 schedule.every().day.at("12:00").do(job_tweet_halving)
