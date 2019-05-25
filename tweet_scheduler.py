@@ -44,7 +44,7 @@ def job_tweet_satoshi_quote_of_the_day():
         send_tweet(tweet)
 
 
-schedule.every().day.at("03:37").do(job_tweet_halving)
+schedule.every().day.at("12:00").do(job_tweet_halving)
 schedule.every().day.at("12:00").do(job_tweet_satoshi_quote_of_the_day)
 
 while 1:
