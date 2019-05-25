@@ -25,8 +25,23 @@ A step by step series of examples that tell you how to get a venv running
 ```
 For Linux:
 sudo apt install python3.7
-pip install schedule
-pip install tweepy
+pip3 install schedule
+pip3 install tweepy
+cd into the project root directory
+python3 tweet_scheduler.py
+
+If you want to keep the bot running after a ssh connection for example with putty is closed:
+tmux
+cd /path_to_project_root/
+python3 tweet_scheduler
+
+Now the putty windows can be closed and the bot will keep running.
+
+Check the still running tmux session with on a new ssh connection with:
+tmux list-sessions
+
+Kill running sessions with:
+tmux kill-server
 
 For Windows to use the venv environment:
 (Navigate to the project directory)
