@@ -7,6 +7,10 @@ def generate_tweet_bitcoin_halving_progression(subsidy_era, block_subsidy, remai
            "\nInfo:\n" + "https://bit.ly/1pQPBGe"
 
 
+def generate_tweet_satoshi_quote_of_the_day(quote):
+    return "𝗦𝗔𝗧𝗢𝗦𝗛𝗜 𝗤𝗨𝗢𝗧𝗘:\n" + quote
+
+
 def generate_ascii_progress_bar(percentage_given):
     filled_bar_length = int(round(26 * float(percentage_given) / float(100)))
     return '▓' * filled_bar_length + '░' * (26 - filled_bar_length)
